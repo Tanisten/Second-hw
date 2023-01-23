@@ -1,10 +1,10 @@
 import React from "react";
+import styled from "styled-components";
  
 
 
 import { Movie } from "../MovieItem/Movie";
-
-import "./main.css";
+ 
 
 const MainContent = (props) => {
   const movieListDefault = props.movieList;
@@ -20,8 +20,10 @@ const MainContent = (props) => {
     return newMovies;
   };
 
+
+
   return (
-    <div>
+    <MainDiv>
       {movieListDefault.map((e) => {
         return (
           <Movie
@@ -36,8 +38,19 @@ const MainContent = (props) => {
           />
         )
       })}
-    </div>
+    </MainDiv>
   );
 };
 
 export default MainContent;
+
+const MainDiv = styled.div`
+width: 60vw;
+margin: 0 auto;
+`
+
+ export const RowDiv = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`
